@@ -1,0 +1,26 @@
+.SideNavItem {
+}
+
+.Path {
+   padding: 5px 10px;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   box-sizing: border-box;
+   transition: 0.4s;
+   color: #444;
+}
+.Active {
+   padding: 5px 20px;
+}
+.Active,.Active * {
+   color: rgb(97, 23, 167);
+
+}
+.Icon {
+}
+
+.Title {
+   margin: 0 5px;
+}

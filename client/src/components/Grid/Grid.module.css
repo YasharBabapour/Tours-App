@@ -1,0 +1,6 @@
+.Grid {
+   display: flex;
+   justify-content: start space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}

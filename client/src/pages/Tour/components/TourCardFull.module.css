@@ -1,0 +1,42 @@
+.Tour {
+
+}
+.Content {
+   padding: 10px 20px;
+}
+.Title {
+   font-size: 18px;
+}
+.Leader {
+   font-size: 14px;
+   color: rgb(73, 72, 72);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 5px ;
+}
+.Desc {
+   font-size: 12px;
+   font-weight: normal;
+   color: gray;
+   background-color: #ddd;
+   padding: 10px;
+   box-sizing: border-box;
+   border-radius: 5px;
+}
+
+.BtnBx {
+   direction: ltr;
+   text-align: left;
+   margin: 20px 0 10px;
+
+}
+
+img.Image {
+   width: 100%;
+}
+
+.DescTitle {
+   color: dodgerblue;
+   font-weight: bold;
+}

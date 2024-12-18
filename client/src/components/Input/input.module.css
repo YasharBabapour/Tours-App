@@ -1,0 +1,17 @@
+.Input {
+   color: blueviolet;
+
+}
+.Input  label {
+
+}
+
+.Input input,.Input textarea {
+   border: 2px solid blueviolet;
+   border-radius: 6px;
+   width: 100%;
+   margin: 5px 0;
+   padding: 5px 10px;
+   outline: 0;
+   background-color: transparent;
+}

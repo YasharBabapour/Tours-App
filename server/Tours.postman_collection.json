@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "710898d9-4282-4dc3-a89e-2f67f5fe0626",
+		"name": "Tours",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailOrUsername\": \"user1\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailOrUsername\": \"admin\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"pedram\",\n    \"email\": \"pedramkhoshdast@gmail.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYmQiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzYwMTI4LCJleHAiOjE2ODc4NDY1Mjh9.NE-yZh29CR7pXfneNPnzE9C74Rgz0krb9whrpNqgHjs",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "List Of Users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYmQiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzYwMjIwLCJleHAiOjE2ODc4NDY2MjB9.0OQN5eGgSqdhX3UEKak_B6SqhHoU9pXX2GijQZwVpDk",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{admin_url}}/users?page=1",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "6495e1f0e0219d086f939dbd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"admin\", \n    \"email\":\"admin@admin.com\",\n    \"password\":\"admin\", \n    \"role\":\"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYzUiLCJlbWFpbCI6InVzZXI5QGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzU3MTc5LCJleHAiOjE2ODc4NDM1Nzl9.YfBFprlQy6X-frc3-rM62brK6UQnS6tqiEzEUjzk6oU",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"user1\", \n    \"email\":\"user1@example.com\",\n    \"password\":\"123\", \n    \"role\":\"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "6495e1f0e0219d086f939dbd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "64967cd1b76a1775711302ae"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change  Role",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYzUiLCJlbWFpbCI6InVzZXI5QGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzU3MTc5LCJleHAiOjE2ODc4NDM1Nzl9.YfBFprlQy6X-frc3-rM62brK6UQnS6tqiEzEUjzk6oU",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\":\"USER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/role/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"role",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "6495e1f0e0219d086f939dbd"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tour",
+					"item": [
+						{
+							"name": "List Of Tours",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/tours",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"tours"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tour By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/tours/:tourId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"tours",
+										":tourId"
+									],
+									"variable": [
+										{
+											"key": "tourId",
+											"value": "6495e1f0e0219d086f939dce"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD Tour",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\":\"تور مازگرد\", \n    \"description\":\"بلا بلا بلتا بلا بلا\", \n    \"start_date\":\"2020-10-10\",\n    \"end_date\":\"2020-10-12\",\n    \"price\":2000,\n    \"leader_full_name\":\"test xz\",\n    \"capacity\":100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/tours",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"tours"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tour",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"subject\":\"تور مازگرد\", \n    \"description\":\"بلا بلا بلتا بلا بلا\", \n    \"start_date\":\"2020-10-10\",\n    \"end_date\":\"2020-10-12\",\n    \"price\":5000,\n    \"leader_full_name\":\"test xz\",\n    \"capacity\":100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/tours/:tourId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"tours",
+										":tourId"
+									],
+									"variable": [
+										{
+											"key": "tourId",
+											"value": "64992a96e1beb737c0869c6f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tour",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/tours/:tourId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"tours",
+										":tourId"
+									],
+									"variable": [
+										{
+											"key": "tourId",
+											"value": "6495e1f0e0219d086f939dc8"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reserves",
+					"item": [
+						{
+							"name": "List Of Reserves",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/reservations",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reserve By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/reservations/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"reservations",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "6495e1f0e0219d086f939dd5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reserves By Tour ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/reservations/tours/:tourId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"reservations",
+										"tours",
+										":tourId"
+									],
+									"variable": [
+										{
+											"key": "tourId",
+											"value": "6495e1f0e0219d086f939dc8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reserves By User ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/reservations/users/:userId",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"reservations",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "6495e1f0e0219d086f939dbf"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tour",
+			"item": [
+				{
+					"name": "Paginate Tours",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tours/:tourId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tours",
+								":tourId"
+							],
+							"variable": [
+								{
+									"key": "tourId",
+									"value": "6495e1f0e0219d086f939dc9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 Top Tour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tours/top",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tours",
+								"top"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reserve",
+			"item": [
+				{
+					"name": "Submit Reserve",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYzUiLCJlbWFpbCI6InVzZXI5QGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzU3MTc5LCJleHAiOjE2ODc4NDM1Nzl9.YfBFprlQy6X-frc3-rM62brK6UQnS6tqiEzEUjzk6oU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name_of_registrant\":\"xboy\", \n    \"counts\":50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/reservations/:tourId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservations",
+								":tourId"
+							],
+							"variable": [
+								{
+									"key": "tourId",
+									"value": "6495e1f0e0219d086f939dd1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Reserve",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYzUiLCJlbWFpbCI6InVzZXI5QGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzU3MTc5LCJleHAiOjE2ODc4NDM1Nzl9.YfBFprlQy6X-frc3-rM62brK6UQnS6tqiEzEUjzk6oU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/reservations/:reserveId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservations",
+								":reserveId"
+							],
+							"variable": [
+								{
+									"key": "reserveId",
+									"value": "6495e1f0e0219d086f939dd9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Reservation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDk1ZTFmMGUwMjE5ZDA4NmY5MzlkYzUiLCJlbWFpbCI6InVzZXI5QGV4YW1wbGUuY29tIiwiaWF0IjoxNjg3NzU3MTc5LCJleHAiOjE2ODc4NDM1Nzl9.YfBFprlQy6X-frc3-rM62brK6UQnS6tqiEzEUjzk6oU",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/reservations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:5000",
+			"type": "default"
+		},
+		{
+			"key": "admin_url",
+			"value": "localhost:5000/admin",
+			"type": "default"
+		}
+	]
+}

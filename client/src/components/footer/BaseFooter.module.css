@@ -1,0 +1,33 @@
+.BaseFooter {
+   background-color: blueviolet;
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   padding: 20px 60px;
+}
+
+.FooterItem {
+   padding: 0 50px;
+}
+.Left {
+   text-align: left;
+   direction: ltr;
+
+}
+.Left ul {
+   display: flex;
+   align-items: center;
+   margin-top: 20px;
+   justify-content: space-between;
+}
+
+.Left ul li {
+   margin: 0 10px;
+
+}
+
+.Line {
+   height: 3px;
+   background-color: aqua;
+   min-width:150px;
+}

@@ -1,0 +1,18 @@
+.KeyValueItem {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 5px 0;
+   background-color: #7fffd47e;
+   padding: 8px 16px;
+   border-radius: 4px;
+   
+}
+
+.Key {
+   opacity: 0.8;
+}
+
+.Value {
+
+}

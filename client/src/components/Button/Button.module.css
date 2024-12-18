@@ -1,0 +1,14 @@
+.ButtonLink{
+   background-color: rgb(26, 26, 26);
+   color: white;
+   border-radius: 8px;
+   opacity: 0.8;
+   transition: 0.5s;
+   padding: 10px 20px;
+   cursor: pointer;
+   display: inline-block;
+}
+
+.ButtonLink:hover {
+   opacity: 1;
+}

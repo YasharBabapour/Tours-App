@@ -1,0 +1,28 @@
+USER { 
+   user_id
+   username
+   email
+   password
+   role (USER, ADMIN)
+}
+
+TOUR {
+   tour_id
+   leader_full_name
+   subject
+   description
+   start_date
+   end_data
+   capacity
+   pricce
+   avatar  
+}
+
+RESERVE {
+   reserve_id
+   user_id
+   tour_id
+   name_of_registrant
+   counts
+   total_cost
+}

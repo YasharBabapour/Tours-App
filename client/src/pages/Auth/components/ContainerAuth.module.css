@@ -1,0 +1,45 @@
+.ContainerAuth {
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   width: 100%;
+   background-color: #333;
+}
+
+.Box {
+   width: 500px;
+   background-color: #333;
+   border-radius: 10px;
+   box-shadow: 0 0 10px 1px #111;
+   padding: 30px 50px;
+   box-sizing: border-box;
+
+}
+
+.Title {
+   font-size:40px;
+}
+
+.HomeLink {
+   color: white;
+   text-decoration: underline;
+}
+.ButtonContainer {
+   text-align: left;
+   direction: ltr;
+}
+.Button {
+   padding: 5px 20px;
+   border-radius: 6px;
+}
+
+.Route {
+   
+}
+.FormInputs {
+   margin: 10px 0;
+}

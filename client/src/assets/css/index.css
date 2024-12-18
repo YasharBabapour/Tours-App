@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: real;
+    src: url('../font/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: old;
+    src: url('../font/IMFellEnglishSC-Regular.ttf');
+}
+
+
+body {
+    font-family: real;
+
+    /* e2fdff */
+
+}
